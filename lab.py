@@ -102,7 +102,6 @@ def make_training_args(
         save_strategy="epoch",
         logging_steps=50,
         seed=seed,
-        load_best_model_at_end=True,
     )
 
 
@@ -148,7 +147,7 @@ def train_classifier(
         args=training_args,
         train_dataset=tokenized_ds["train"],
         eval_dataset=tokenized_ds["test"],
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
         data_collator=data_collator,
         compute_metrics=compute_metrics,
     )
@@ -266,7 +265,7 @@ def main() -> None:
         try:
             trainer.push_to_hub(repo_id)
             tokenizer.push_to_hub(repo_id)
-            print(f"\nPushed to https://huggingface.co/naseemmig02/{repo_id}")
+            print(f"\nPushed to https://huggingface.co/<your-username>/{repo_id}")
         except Exception as e:
             print(f"\nHF Hub push failed: {e}")
             print("Run `huggingface-cli login` and try again.")
