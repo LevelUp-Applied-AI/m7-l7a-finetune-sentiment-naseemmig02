@@ -87,7 +87,7 @@ def tokenize_dataset(ds_dict: DatasetDict, tokenizer, max_length: int = 128) -> 
 def make_training_args(
     output_dir: str,
     lr: float = 5e-5,
-    epochs: int = 2,
+    epochs: int = 4,
     batch_size: int = 8,
     seed: int = 42,
 ) -> TrainingArguments:
