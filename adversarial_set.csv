@@ -1,0 +1,31 @@
+id,hypothesis_category,text,expected_label,rationale
+1,negation,The latest update did not improve battery life at all.,negative,Tests whether the model picks up the negation cue or just the trigger word 'improve'
+2,lexical_trigger,This app is no longer reliable on my phone.,negative,Strong positive cue 'reliable' negated by 'no longer'; tests cue-vs-context handling
+3,domain_shift,The team won the championship final last weekend.,neutral,Sports content unrelated to app-review training; tests domain-shift robustness
+4,negation,I did not expect this app to work so poorly.,negative,Uses negation 'did not expect' with a negative outcome to test negation handling
+5,negation,The app does not provide any useful features anymore.,negative,Negation 'does not provide' paired with 'useful' to test if model catches the negation
+6,negation,I never thought this update would make the app so slow.,negative,Uses 'never' as a negation to test if model handles different negation forms
+7,lexical_trigger,"This app was amazing, but now it's completely broken.",negative,Positive cue 'amazing' followed by negative context to test cue handling
+8,lexical_trigger,"The interface is beautiful, but it crashes every time I use it.",negative,Positive cue 'beautiful' but overall negative review
+9,lexical_trigger,"Great idea, terrible execution.",negative,Positive 'great idea' but negative overall
+10,lexical_trigger,"The concept is fantastic, but the performance is awful.",negative,Positive 'fantastic' paired with negative performance
+11,lexical_trigger,"Excellent design, but the functionality is lacking.",negative,Positive 'excellent design' but negative functionality
+12,lexical_trigger,"It has a nice UI, but it's completely useless for my needs.",negative,Positive 'nice UI' with negative overall
+13,domain_shift,The recipe calls for two cups of flour and three eggs.,neutral,"Cooking/recipe domain, tests domain shift"
+14,domain_shift,Stock prices rose sharply after the quarterly earnings report.,neutral,Financial/news domain
+15,domain_shift,The concert was sold out within minutes of tickets going on sale.,neutral,Entertainment domain
+16,domain_shift,The weather forecast predicts rain for the next three days.,neutral,Weather domain
+17,domain_shift,The novel explores themes of love and loss in post-war Europe.,neutral,Literature domain
+18,domain_shift,The new law will go into effect starting January first.,neutral,Political/domain
+19,length_extreme,App crashes.,negative,Very short (2 words)
+20,length_extreme,Worst app ever.,negative,Very short (3 words)
+21,length_extreme,Works perfectly.,positive,Very short (2 words)
+22,length_extreme,"I've been using this app for over two years now, and I have to say that it's consistently been one of the most reliable tools in my daily workflow. Whether I'm tracking my expenses, managing my to-do list, or staying organized with my calendar, this app has never let me down. The interface is intuitive, the features are well-thought-out, and the updates are always meaningful and bug-free. I can't imagine my life without it at this point.",positive,Very long sentence (over 100 words)
+23,length_extreme,"This app has so many issues that I don't even know where to start. It freezes constantly, the sync never works properly, the notifications are unreliable, and half the features don't even do what they're supposed to. I've contacted support multiple times and never received a helpful response. I've tried uninstalling and reinstalling, but nothing fixes the problems. I'm so frustrated that I'm ready to switch to a different app immediately.",negative,Very long negative sentence
+24,length_extreme,Just okay.,neutral,Very short
+25,sarcasm,"Wow, this app is so fast I can watch paint dry while it loads.",negative,Sarcastic positive surface form but negative actual meaning
+26,sarcasm,"Great, another update that makes the app worse - exactly what I needed!",negative,Sarcastic 'great' paired with negative update
+27,sarcasm,"Oh perfect, the app crashed right when I needed it most - thanks developers!",negative,Sarcastic 'perfect' with negative outcome
+28,sarcasm,This is definitely the best app I've ever used - if I wanted to waste my time.,negative,Sarcastic 'best app' with negative intent
+29,other,The app has a 4.8 star rating but I can't stand it.,negative,"Contradicts star rating, tests whether model is affected by numerical cues"
+30,other,"The developer says it's ""the best"", but it's actually the worst.",negative,"Contradicts developer's claim, tests model's handling of conflicting statements"
